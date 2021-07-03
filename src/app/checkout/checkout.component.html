@@ -121,10 +121,10 @@
             </div>
             <div class="form-group">
                 <label for="cardName">Card Name:</label>
-                <input type="text" class="form-control" placeholder="Enter Card Name" name="street" [(ngModel)]="card.cardName" required minlength="2" #cardName="ngModel" [class.is-invalid]="cardName.invalid && cardName.touched">
+                <input type="text" class="form-control" placeholder="Enter Card Name" name="street" [(ngModel)]="card.cardName" required minlength="5" #cardName="ngModel" [class.is-invalid]="cardName.invalid && cardName.touched">
                 <small class="text-danger" [class.d-none]="cardName.valid || cardName.untouched">Card Name is required
                 field</small>
-                <div *ngIf="cardName.errors?.minlength">Card Name must be at least 2 characters long. </div>
+                <div *ngIf="cardName.errors?.minlength">Card Name must be at least 5 characters long. </div>
             </div>
             <div class="form-group">
                 <label for=" cardNo">Card No:</label>
