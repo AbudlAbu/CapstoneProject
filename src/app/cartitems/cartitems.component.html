@@ -1,0 +1,82 @@
+<div style="margin-top: 10vh; margin-bottom: 50vh;" class="alert alert-warning ml-4 mr-4" *ngIf="restaurants.length==0">
+    
+        Your food cart is empty!!!__Keep ordering the healthy food__<i class="fa fa-smile-o"></i>
+    
+</div>
+
+<div class="contain " style="margin-bottom: 50px;" *ngIf="restaurants.length!=0">
+
+    <div class="container">
+        <h1>Food Cart </h1>
+    </div>
+
+    <div class="container" *ngFor="let rest of restaurants">
+
+        <section id="cart">
+            <article class="product">
+                <header>
+                    <a class="remove">
+                        <img src={{rest.url}} alt="">
+
+
+             </a>
+                </header>
+
+                <div class="content form-row">
+                    <div class="col">
+                        <h1>{{rest.dishname}}</h1>
+                        <h1 class="price">
+                            Price:{{rest.price | currency:"INR"}}
+                        </h1>
+                         </div> 
+
+                   
+                    <div class="col" style="float: left; margin-right: 0px;">
+                        <h1>Quantity</h1>
+                        <div class="form-row"></div>
+                        <!-- <input type="button " value="-" style="height:20px;width: 10px; " class="col" ><i class="fa fa-plus " style="margin: 10px;"></i> -->
+                        <i class="fa fa-minus  btn btn-primary" (click)="quantityDec(rest)" style="margin: 10px; border: 1px;"></i>
+                        <span class="col"> {{rest.quantity}}</span>
+                    <!-- <input type="button" value="+" style="height:20px;width: 10px; " class="col" ><i class="fa fa-minus" style="margin: 10px;"></i> -->
+                    <i class="fa fa-plus btn btn-primary" (click)="quantityInc(rest)"style="margin: 10px; border: 1px;"></i>
+<a class=" btn  btn-primary" style="color: #ffffff;"  (click)="deleteItem(rest)">
+    Remove
+</a>
+                    <!-- <i class="fa fa-trash-o" style="font-size:30px; color:red; cursor:pointer;"></i> -->
+                    </div>
+                </div>
+<!-- quantity -->
+
+                <!-- <div class="content">
+                    
+<button type="button" class="btn" ><i class="fa fa-plus"></i>  </button>
+<span> qnt </span>
+<button type="button" class="btn" ><i class="fa fa-minus"></i></button>
+
+                </div> -->
+
+                <footer class="content">
+
+                    <h2 class="price">
+                        Price:{{rest.price *rest.quantity | currency:"INR"}}
+                    </h2>
+                </footer>
+            </article>
+
+
+        </section>
+
+    </div>
+
+    <footer id="site-footer">
+        <div class="container clearfix">
+            <div class="right">
+                <h1 class="total">Total: <span>{{total_price  | currency:"INR"}}</span></h1>
+                <button [disabled]="valueEnable"  routerLink="/check"><a class="btn" >Checkout</a></button>
+            </div>
+
+        </div>
+    </footer>
+</div>
+
+<!-- [disabled]="valueEnable" -->

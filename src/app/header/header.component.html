@@ -1,0 +1,26 @@
+<div class="clear"></div>
+<nav class="navigation">
+    <header class="header">
+        <img src="assets/logo.png" class="image" routerLink="">
+        <form class="form">
+            <input type="text" class="text_box" placeholder="Search for food..." #box (keyup.enter)="onEnter(box.value)">
+            <input type="submit" value="Search" class="search_button" (click)="onEnter(box.value)">
+        </form>
+        <div style=" margin-top: 22px;">
+            <span class="span1">{{0+total_price | currency:'INR'}}</span>
+            <span class="span2">{{0+total_quantity}}</span> &nbsp;
+            <i class="fa fa-shopping-cart" style="font-size:27px;color:white" routerLink="/cartitems" ></i>
+        </div>
+        <ng-container *ngIf="enableProp != 1; else elseBlock">
+            <button class="button_signup" routerLink="/registration">SignUp</button>
+            <button class="button_login" routerLink="/login">Login</button>
+        </ng-container>
+        <ng-template #elseBlock>
+            <p style="color: white; padding-top:4vh; padding-right: 0px;">Welcome: {{loginSuccess}}</p>
+            <button class="button_login" routerLink="" (click)="onLogout()">Logout</button>
+        </ng-template>
+
+
+
+    </header>
+</nav>

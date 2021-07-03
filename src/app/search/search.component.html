@@ -1,0 +1,8 @@
+<ng-container *ngFor="let rest of restaurant">
+    <div *ngIf="rest.dishname.toLowerCase()===dish.toLowerCase()" class="container">
+        <img src="{{rest.url}}" style="width: 100%;height: 200px;">
+        <h3 class="rupee">{{rest.dishname}}</h3>
+        <h3 class="rupee"><i class="fa fa-inr" aria-hidden="true"></i>{{rest.price}}</h3>
+        <a class="cart-button" style="color: white" (click)="OnAddCart(rest.id)">Add to cart </a>
+    </div>
+</ng-container>

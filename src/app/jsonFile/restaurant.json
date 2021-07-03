@@ -1,0 +1,157 @@
+[{
+        "id": 1,
+        "url": "assets/Dosa.jpg",
+        "price": 80,
+        "rname": "r1",
+        "dishname": "Dosa",
+        "quantity":1
+
+
+    },
+    {
+        "id": 2,
+        "url": "assets/thali.jpg",
+        "price": 190,
+        "rname": "r1",
+        "dishname": "PunjabiThali",
+        "quantity":1
+
+    },
+    {
+        "id": 3,
+        "url": "assets/ChickenBiryani.jpeg",
+        "price": 280,
+        "rname": "r1",
+        "dishname": "ChickenBiriyani",
+        "quantity":1
+    },
+    {
+        "id": 4,
+        "url": "assets/Pizza.png",
+        "price": 220,
+        "rname": "r2",
+        "dishname": "Pizza",
+        "quantity":1
+    },
+    {
+        "id": 5,
+        "url": "assets/shawarma.jpg",
+        "price": 260,
+        "rname": "r2",
+        "dishname": "Shawarma",
+        "quantity":1
+    },
+    {
+        "id": 6,
+        "url": "assets/kfc.jpeg",
+        "price": 250,
+        "rname": "r2",
+        "dishname": "KFC",
+        "quantity":1
+    },
+    {
+        "id": 7,
+        "url": "assets/Makki Ki Roti.jpg",
+        "price": 170,
+        "rname": "r3",
+        "dishname": "Makki Ki Roti",
+        "quantity":1
+    },
+    {
+        "id": 8,
+        "url": "assets/Lobster Fry.jpg",
+        "price": 400,
+        "rname": "r3",
+        "dishname": "Lobster Fry",
+        "quantity":1
+    },
+    {
+        "id": 9,
+        "url": "assets/parotta.jpeg",
+        "price": 60,
+        "rname": "r3",
+        "dishname": "Parotta",
+        "quantity":1
+    },
+    {
+        "id": 10,
+        "url": "assets/prawn.jpg",
+        "price": 200,
+        "rname": "r4",
+        "dishname": "Prawn Fry",
+        "quantity":1
+    },
+    {
+        "id": 11,
+        "url": "assets/GrilledChicken.jpg",
+        "price": 250,
+        "rname": "r4",
+        "dishname": "GrilledChicken",
+        "quantity":1
+    },
+    {
+        "id": 12,
+        "url": "assets/Hyderabad-FishFry.png",
+        "price": 260,
+        "rname": "r4",
+        "dishname": "Hyderabad-FishFry",
+        "quantity":1
+    },
+    {
+        "id": 13,
+        "url": "assets/Grilled-BBQ-Chicken.jpg",
+        "price": 290,
+        "rname": "r4",
+        "dishname": "Grilled-BBQ-Chicken",
+        "quantity":1
+    },
+    {
+        "id": 14,
+        "url": "assets/MuttonBiryani.jpg",
+        "price": 340,
+        "rname": "r1",
+        "dishname": "MuttonBiryani",
+        "quantity":1
+    },
+    {
+        "id": 15,
+        "url": "assets/chola.png",
+        "price": 80,
+        "rname": "r1",
+        "dishname": "Chola Puri",
+        "quantity":1
+    },
+    {
+        "id": 16,
+        "url": "assets/Noodels.jpg",
+        "price": 150,
+        "rname": "r1",
+        "dishname": "Noodels",
+        "quantity":1
+    },
+    {
+        "id": 18,
+        "url": "assets/Burger.jpg",
+        "price": 120,
+        "rname": "r2",
+        "dishname": "Burger",
+        "quantity":1
+    },
+    {
+        "id": 19,
+        "url": "assets/Grilled-Cheese-Sandwich.png",
+        "price": 160,
+        "rname": "r2",
+        "dishname": "Grilled-Cheese-Sandwich",
+        "quantity":1
+    },
+    {
+        "id": 20,
+        "url": "assets/breadomelette.jpg",
+        "price": 50,
+        "rname": "r3",
+        "dishname": "Bread Omelette",
+        "quantity":1
+    }
+
+]

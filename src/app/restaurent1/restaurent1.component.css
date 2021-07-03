@@ -1,0 +1,14 @@
+.container {
+    width: 30%;
+    display: inline-block;
+    margin-left: 2%;
+    box-shadow: 2px 2px 8px #ccc;
+    height: 53vh;
+}
+
+.cart-button {
+    padding: 3%;
+    text-decoration: none;
+    background-color: darkblue;
+    border-radius:20px ;
+}

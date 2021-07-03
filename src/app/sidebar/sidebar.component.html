@@ -1,0 +1,24 @@
+
+<div class="card border-primary shadow-lg " >
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs col-lg-12">
+            <li class="nav-item mr-1 ml-1 col-lg-2 mx-auto" >
+                <a  [routerLink]="['/rest-1',r1]" routerLinkActive="selected" class="nav-link active font-weight-bold text-center" id="pills-home-tab" data-toggle="pill"  role="tab" aria-controls="pills-home" aria-selected="true">AdiGas</a>
+              </li>
+              <li class="nav-item mr-1 ml-1 col-lg-2 mx-auto" >
+                <a  [routerLink]="['/rest-2',r2]" routerLinkActive="selected" class="nav-link font-weight-bold text-center" id="pills-profile-tab" data-toggle="pill"  role="tab" aria-controls="pills-profile" aria-selected="false">RotiGhar</a>
+              </li>
+              <li class="nav-item mr-1 ml-1 col-lg-2 mx-auto" >
+                <a  [routerLink]="['/rest-3',r3]" routerLinkActive="selected" class="nav-link font-weight-bold text-center" id="pills-contact-tab" data-toggle="pill"  role="tab" aria-controls="pills-contact" aria-selected="false">Panjabi Rasoi</a>
+              </li>
+              <li class="nav-item mr-1 ml-1 col-lg-2 mx-auto" >
+                  <a [routerLink]="['/rest-4',r4]" routerLinkActive="selected" class="nav-link font-weight-bold text-center" id="pills-contact-tab" data-toggle="pill"  role="tab" aria-controls="pills-contact" aria-selected="false">Udupi</a>
+                </li>
+        </ul>
+    </div>
+    <div class="main">
+        <router-outlet></router-outlet>
+    </div>
+    
+  </div>
+

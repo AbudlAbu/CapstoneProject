@@ -1,0 +1,193 @@
+<div class="container">
+    <h2 style="color:lightseagreen;">Checkout-Form:</h2>
+    <form #Checkform="ngForm" (ngSubmit)="registerUser(Checkform.value)">
+        <div class="sub-container">
+            <h4 style="color: lightcoral;">Customer Details</h4>
+            <!--Fisst Name-->
+            <div class="form-group">
+                <label for="first_name">Firstname:</label>
+                <input type="text" id="name" name="first_name" class="form-control" required minlength="2" [(ngModel)]="customer.first_name" #first_name="ngModel" placeholder="Enter FirstName" [class.is-invalid]="first_name.invalid && first_name.touched">
+                <small class="text-danger" [class.d-none]="first_name.valid || first_name.untouched">Firstname is required
+                field</small>
+                <div *ngIf="first_name.errors?.minlength">First Name must be at least 2 characters long. </div>
+
+            </div>
+            <!--Last Name-->
+            <div class="form-group">
+                <label for="last_name">LastName:</label>
+                <input type="text" class="form-control" placeholder="Enter LastName" name="last_name" [(ngModel)]="customer.last_name" required minlength="2" #last_name="ngModel" [class.is-invalid]="last_name.invalid && last_name.touched">
+                <small class="text-danger" [class.d-none]="last_name.valid || last_name.untouched">Lastname is required
+                field</small>
+                <div *ngIf="last_name.errors?.minlength">Last Name must be at least 2 characters long. </div>
+
+            </div>
+
+            <!--Email-->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="customer.email" required pattern="\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+                <div *ngIf="email.errors && ( email.invalid && email.touched)">
+                    <small class="text-danger" *ngIf="email.errors.required">Email Id is required field</small>
+                    <small class="text-danger" *ngIf="email.errors.pattern">Enter the proper value of email</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-container">
+            <h4 style="color: lightcoral;">Address</h4>
+
+            <!--country-->
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <!-- <input type="text" class="form-control" placeholder="Enter Country" name="country" [(ngModel)]="address.country" required #country="ngModel" [class.is-invalid]="country.invalid && country.touched"> -->
+               
+                <select  class="form-control" name="country" [(ngModel)]="address.country" required #country="ngModel" [class.is-invalid]="country.invalid && country.touched" (change)="changeCountry($event)">
+                    <option value="undefined" hidden>--Choose Country--</option>
+                    <option  *ngFor="let country of Countries " value= {{country.name}}>{{country.name}}</option>
+                </select>
+               
+                <small class="text-danger" [class.d-none]="country.valid || country.untouched">Country is required
+                field</small>
+
+
+            </div>
+            <!--state-->
+            <div class="form-group">
+                <label for="state">State:</label>
+                <!-- <input type="text" class="form-control" placeholder="Enter State" name="state" [(ngModel)]="address.state" required #state="ngModel" [class.is-invalid]="state.invalid && state.touched"> -->
+               
+                <select  class="form-control"  name="state"  [(ngModel)]="address.state"  (change)="changeState($event)" required #state="ngModel" [class.is-invalid]="state.invalid && state.touched">
+                    <option value="undefined" hidden>--Choose State--</option>
+                    <option *ngFor="let state of states" value={{state.name}}>{{state.name}}</option>
+                </select>
+               
+                <small class="text-danger" [class.d-none]="state.valid || state.untouched">state is required
+                field</small>
+
+            </div>
+<!--City-->
+            <div class="form-group">
+
+                <label for="city">City:</label>
+                <!-- <input type="text" class="form-control" placeholder="Enter city" name="city" [(ngModel)]="address.city" required minlength="3" #city="ngModel" [class.is-invalid]="city.invalid && city.touched"> -->
+               
+                <select  class="form-control" name="city" [(ngModel)]="address.city" required minlength="3" #city="ngModel" [class.is-invalid]="city.invalid && city.touched && city.value==undefined">
+                    <option value="undefined" hidden>--Choose City--</option>
+                    <option *ngFor="let i of cities" value={{i}}>{{i}}</option>
+                </select>
+           
+                <small class="text-danger" [class.d-none]="city.valid || city.untouched || city.value=='' ">city is required
+                field</small>
+                <!-- <div *ngIf="first_name.errors?.minlength">City must be at least 3 characters long. </div> -->
+
+
+            </div>
+            
+            
+            <!--street-->
+            <div class="form-group">
+                <label for=" street">Street:</label>
+                <input type="text" class="form-control" placeholder="Enter street" name="street" [(ngModel)]="address.street" required minlength="6" #street="ngModel" [class.is-invalid]="street.invalid && street.touched">
+                <small class="text-danger" [class.d-none]="street.valid || street.untouched">street is required
+                field</small>
+                <div *ngIf="street.errors?.minlength">Street must be at least 6 characters long. </div>
+            </div>
+            <!--zipcode-->
+            <div class="form-group">
+                <label for="zipcode">Zipcode:</label>
+                <input type="text" class="form-control" placeholder="Enter zipcode" name="zipcode" [(ngModel)]="address.zipcode" required minlength="6" #zipcode="ngModel" [class.is-invalid]="zipcode.invalid && zipcode.touched">
+                <small class="text-danger" [class.d-none]="zipcode.valid || zipcode.untouched">zipcode is required
+                field</small>
+                <div *ngIf="zipcode.errors?.minlength">zipcode must be at least 6 digits. </div>
+            </div>
+        </div>
+
+        <div class="sub-container">
+            <h4 style="color: lightcoral;">Card Details</h4>
+
+            <!--card-->
+            <div class="form-group">
+                <label for="cardType">CardType:</label>
+                <!-- <input type="text" class="form-control" placeholder="Enter Country" name="country" [(ngModel)]="address.country" required #country="ngModel" [class.is-invalid]="country.invalid && country.touched"> -->
+               
+                <select #cardType="ngModel" class="form-control" name="cardType" [(ngModel)]="card.cardType" required  [class.is-invalid]="cardType.invalid && cardType.touched" >
+                    <option value="undefined" hidden>--Choose Card Type--</option>
+                    <option   value= "Visa">Visa</option>
+                    <option   value= "Master Card">Master Card</option>
+                </select>
+               
+                <small class="text-danger" [class.d-none]="cardType.valid || cardType.untouched">Card Type is required
+                field</small>
+            </div>
+            <div class="form-group">
+                <label for="cardName">Card Name:</label>
+                <input type="text" class="form-control" placeholder="Enter Card Name" name="street" [(ngModel)]="card.cardName" required minlength="2" #cardName="ngModel" [class.is-invalid]="cardName.invalid && cardName.touched">
+                <small class="text-danger" [class.d-none]="cardName.valid || cardName.untouched">Card Name is required
+                field</small>
+                <div *ngIf="cardName.errors?.minlength">Card Name must be at least 2 characters long. </div>
+            </div>
+            <div class="form-group">
+                <label for=" cardNo">Card No:</label>
+                <input type="text" class="form-control" placeholder="Enter Card No" name="cardNo" [(ngModel)]="card.cardNo" required minlength="16" #cardNo="ngModel" [class.is-invalid]="cardNo.invalid && cardNo.touched">
+                <small class="text-danger" [class.d-none]="cardNo.valid || cardNo.untouched">Card No is required
+                field</small>
+                <div *ngIf="cardNo.errors?.minlength">Card No must be at least 16 Number long. </div>
+            </div>
+            <div class="form-group">
+                <label for="securityCode">Security Code:</label>
+                <input type="text" class="form-control" placeholder="Enter Security Code" name="securityCode" [(ngModel)]="card.securityCode" required minlength="3" #securityCode="ngModel" [class.is-invalid]="securityCode.invalid && securityCode.touched">
+                <small class="text-danger" [class.d-none]="securityCode.valid || securityCode.untouched">Security Code is required
+                field</small>
+                <div *ngIf="securityCode.errors?.minlength">Security Code must be at least 3 Number long. </div>
+            </div>
+            <div class="form-group">
+                <label for="expiryMonth">Expiry Month:</label>
+                <!-- <input type="text" class="form-control" placeholder="Enter Country" name="country" [(ngModel)]="address.country" required #country="ngModel" [class.is-invalid]="country.invalid && country.touched"> -->
+               
+                <select #expiryMonth="ngModel" class="form-control" name="expiryMonth" [(ngModel)]="card.expiryMonth" required  [class.is-invalid]="expiryMonth.invalid && expiryMonth.touched" >
+                    <option value="undefined" hidden>--Choose Expiry Month--</option>
+                    <option *ngFor="let i of expiryMonths "  value= "i">{{i}}</option>
+                </select>
+               
+                <small class="text-danger" [class.d-none]="expiryMonth.valid || expiryMonth.untouched">Expiry Month is required
+                field</small>
+            </div>
+            <div class="form-group">
+                <label for="expiryYear">Expiry Year:</label>
+                <!-- <input type="text" class="form-control" placeholder="Enter Country" name="country" [(ngModel)]="address.country" required #country="ngModel" [class.is-invalid]="country.invalid && country.touched"> -->
+               
+                <select #expiryYear="ngModel" class="form-control" name="expiryYear" [(ngModel)]="card.expiryYear" required  [class.is-invalid]="expiryYear.invalid && expiryYear.touched" >
+                    <option value="undefined" hidden>--Choose Expiry Year--</option>
+                    <option *ngFor="let i of expiryYears "  value= "i">{{i}}</option>
+                    
+                </select>
+               
+                <small class="text-danger" [class.d-none]="expiryYear.valid || expiryYear.untouched">Expiry Yearis required
+                field</small>
+            </div>
+
+        </div>
+ <!--Order-->
+        <div class="sub-container">
+            <!--itemname-->
+            <h4 style="color: lightcoral;">Order</h4>
+
+            <!--Price-->
+            <div class="form-group">
+                <label for=" price">Total Price:</label>
+                <input type="text" class="form-control" placeholder={{total_price}} name="total_price" disabled>
+
+            </div>
+            <!--quantity-->
+            <div class="form-group">
+                <label for="  quantity">Total Quantity:</label>
+                <input type="text" class="form-control" placeholder={{total_quantity}} name="total_quantity" disabled>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-info" >Place Order</button>
+        <button style="margin-left: 2%;background-color: darkblue;" class="btn btn-info" [routerLink]="['']">Go to Home</button>
+
+    </form>
+
+</div>

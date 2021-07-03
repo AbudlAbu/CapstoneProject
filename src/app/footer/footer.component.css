@@ -1,0 +1,44 @@
+.clear { clear: both; height: 20vh; }
+
+.footer-basic {
+  height: 10vh;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding:20px 0;
+    background-image: url("../../assets/bk.jpg");
+    color:white;
+  }
+  
+  .footer-basic .social {
+    text-align:center;
+    /* padding-bottom:25px; */
+  }
+  
+  .footer-basic .social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:2px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .footer-basic .social > a:hover {
+    opacity:1.0;
+    color:rgb(98, 81, 248);
+  }
+  
+  .footer-basic .copyright {
+    /* margin-top:10px; */
+    text-align:center;
+    font-size:10px;
+    color:rgb(247, 244, 244);
+    margin-bottom:0;
+  }

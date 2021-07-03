@@ -1,0 +1,101 @@
+.clear {
+    clear: both;
+    height: 12vh;
+}
+
+.navigation {
+    height: 12vh;
+    background-image: url("../../assets/bk.jpg");
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+.text_box {
+    text-align: center;
+    height: 40px;
+    width: 250px;
+    outline: none;
+    position: relative;
+    right: 25%;
+    left: 3%;
+    border-radius: 50px;
+    border: none
+}
+
+.search_button {
+    background-color: darkblue;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    position: relative;
+    right: 20%;
+    left: 5%;
+    cursor: pointer;
+}
+
+.button_signup {
+    background-color: darkblue;
+    border-radius: 20px;
+    color: white;
+    height: 40px;
+    width: 80px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    position: relative;
+    left: 8%;
+    cursor: pointer;
+}
+
+.button_login {
+    background-color: darkblue;
+    border-radius: 20px;
+    color: white;
+    height: 40px;
+    width: 80px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+}
+
+.span1 {
+    background-color: darkblue;
+    color: white;
+    padding: 8px 20px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.span2 {
+    background-color: white;
+    padding: 8px 20px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.icon {
+    color: white;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.image {
+    border-radius: 50%;
+    cursor: pointer;
+}
